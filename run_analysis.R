@@ -38,5 +38,5 @@ df <-select(df, -ActivityId)
 # 5. From the data set in step 4 (or 3), create a second, independent tidy data set 
 # with the average of each variable for each activity and each subject. 
 df_output <- df %>% group_by(Subject, Activity)%>% summarise_all(mean, na.rm = TRUE)
-write_csv(df_output, "Output.csv")
+write.table(df_output, "Output.txt", row.name=FALSE)
 
