@@ -1,7 +1,8 @@
 library(dplyr)
 library(tidyverse)
 
-# read input files
+# read input files and rename columns
+
 featuresMap<-read.table("features.txt", header = FALSE)
 featuresMap$V2_unique <- make.names(featuresMap$V2,unique = TRUE)
 # featuresMap[featuresMap$V2 == "fBodyAcc-bandsEnergy()-1,8",] # label occurs many times
